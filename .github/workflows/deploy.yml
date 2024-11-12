@@ -3,7 +3,7 @@ name: Deploy to EC2 without Docker Hub
 on:
   push:
     branches:
-      - main # Trigger this workflow on push to the main branch
+      - main # Triggers the workflow on pushes to the main branch
 
 jobs:
   deploy:
@@ -45,10 +45,10 @@ jobs:
             docker load -i /home/${EC2_USER}/single-page-app-docker.tar
             
             # Stop and remove any existing container
-            docker stop single-page-app-docker || true
-            docker rm single-page-app-docker || true
+            docker stop single-page-app || true
+            docker rm single-page-app || true
 
             # Run the container
-            docker run -d --name single-page-app-docker -p 80:3000 single-page-app-docker:latest
+            docker run -d --name single-page-app -p 80:3000 single-page-app-docker:latest
           EOF
         shell: bash
