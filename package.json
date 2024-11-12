@@ -1,0 +1,16 @@
+{
+  "name": "single-page-app-docker",
+  "version": "1.0.0",
+  "description": "Deploying single page app using docker CI/CD on EC2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "path": "^0.12.7"
+  }
+}
